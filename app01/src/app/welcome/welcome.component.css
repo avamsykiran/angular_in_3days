@@ -1,0 +1,10 @@
+.welcome{
+    background-color: #ffffff;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.welcome form{
+    margin: 5px;
+}
