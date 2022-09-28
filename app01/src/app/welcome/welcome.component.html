@@ -10,5 +10,28 @@
                 <input type="text" name="tb2" [(ngModel)]="lastName" />
             </label>
         </div>
+        <div>
+            <label>Image Width:
+                <input type="range" name="r" [(ngModel)]="logoWidth" min="50" max="500" />
+                {{logoWidth}} px.
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" [(ngModel)]="applyBorder" name="c1" /> Border
+            </label>
+            <label>
+                <input type="checkbox" [(ngModel)]="applyCenter" name="c2" /> Center
+            </label>
+        </div>
     </form>
+
+    <div>
+        <img 
+            [src]="logos[logoIndex]"
+            [style.width.px]="logoWidth"
+            (click)="toggle()"
+            [class.center]="applyCenter"
+            [class.border]="applyBorder"/>
+    </div>
 </div>

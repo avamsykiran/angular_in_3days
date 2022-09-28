@@ -158,8 +158,17 @@ Angular Archetecture
 
             One Way Data Binding
 
-            
+                Attribute Binding           [attribute]="field"
+                Style Binding               [style.cssProperty]="field"
+                CSS Class Binding           [class.className]="booleanExpression"
+                Event Binding               (eventAttributeDirective)="method()"
 
+                                        html event attributes               eventAttributeDirective
+                                            onSubmit                                ngSubmit
+                                            onClick                                 click
+                                            onMosueOver                             mouseover
+                                            onBlur                                  blur
+                                            onFocus ..etc                           focus ...etc
 
     Attribute Directives
 
