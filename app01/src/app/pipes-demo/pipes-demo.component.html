@@ -1,0 +1,43 @@
+<div class="box pd">
+    <h5>String pipes</h5>
+    <div>
+        {{strData}} <br />
+        {{strData|lowercase}} <br />
+        {{strData|uppercase}} <br />
+        {{strData|titlecase}} <br />
+    </div>
+
+    <h5>Currency pipe</h5>
+    <div>
+        {{numData}} <br />
+        {{numData|currency:'INR'}} <br />
+        {{numData|currency:'USD'}} <br />
+        {{numData|currency:'AUD'}} <br />
+        {{numData|currency:'JPY'}} <br />
+        {{numData|currency:'GBP'}} <br />
+        {{numData|currency:'XYZ'}} <br />
+    </div>
+
+    <h5>Number pipe</h5>
+    <div>
+        {{numData}} <br />
+        {{numData|number:'1.0-0'}} <br />
+        {{numData|number:'2.0-0'}} <br />
+        {{numData|number:'3.0-0'}} <br />
+        {{numData|number:'4.0-0'}} <br />
+        {{numData|number:'4.0-1'}} <br />
+        {{numData|number:'4.0-2'}} <br />
+        {{numData|number:'4.0-3'}} <br />
+    </div>
+
+    <h5>Date pipe</h5>
+    <div>
+        {{dateData}} <br />
+        {{dateData|date:'short'}} <br />
+        {{dateData|date:'long'}} <br />
+        {{dateData|date:'dd-MM-yy'}} <br />
+        {{dateData|date:'dd-MMM-yyyy'}} <br />
+        {{dateData|date:'dd-MMMM-yyyy hh:mm:ss a'}} <br />
+        {{dateData|date:'dd-MMMM-yyyy HH:mm:ss'}} <br />
+    </div>
+</div>

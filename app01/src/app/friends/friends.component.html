@@ -1,0 +1,17 @@
+<div class="box friends">
+ 
+    <div *ngIf="friendNames.length===0">
+        <p>No Friends To Display</p>
+    </div>
+
+    <ol *ngIf="friendNames.length>0">
+        <li *ngFor="let fnm of friendNames"> {{fnm}} </li>
+    </ol>
+
+    <form (ngSubmit)="add()">
+        <label>Friend Name:
+            <input type="text" name="tb1" [(ngModel)]="friendName" />
+        </label>
+        <button>ADD</button>
+    </form>
+</div>

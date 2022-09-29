@@ -6,3 +6,14 @@
 body{
     background-color: #faaafa;
 }
+
+.box{
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.box>form,.box>div{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

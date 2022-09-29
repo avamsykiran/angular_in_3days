@@ -181,7 +181,20 @@ Angular Archetecture
 
     Structural Directives
 
+        *ngIf
+        *ngFor
+
     Pipes
+
+        a pipe is used to transform a value into antoehr just before we render it.
+
+        in-built pipe
+            lowercase
+            uppercase
+            titlecase
+            number
+            currency 
+            date
 
         @Pipe({
             name:''
