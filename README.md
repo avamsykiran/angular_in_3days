@@ -211,3 +211,31 @@ Angular Archetecture
         class StockService{
 
         }
+
+Bootstrap Integration Angular
+--------------------------------------------------------------------
+
+    bootstrap is a css library.
+
+    npm install bootstrap --save
+
+    angular.json
+        |
+        |- styles       include node_modules/bootstrap/dist/css/bootstrap.min.css
+        |- scripts      include node_modules/bootstrap/dist/js/bootstrap.min.js
+
+Routing 
+--------------------------------------------------------------------
+
+    routing enables displaying components based on the url-path.
+
+    RouterModule   from @angular/router
+
+        Route               class       path,pathMatch:'startsWith|full',redirect,component,children
+        Routes              Route[]
+        Router              Service     to navigate progamatically using a methd 'navigateByUrl()'
+        ActivatedRoute      Service     to read path variables and query params from a url.
+        router-outlet       Component   is sued to reserve place for the output component of routing
+        routerLink          Attribute Directive     is used on 'a' eleemnt isntead of 'href'.
+        routerLinkActive    Attribute Directive     is used on 'a' eleemnt to apply a css class on active links'
+
