@@ -1,1 +1,29 @@
-<p>account-holders works!</p>
+<div class="col-sm-10 mx-auto p-2">
+    <h5>Accounts</h5>
+
+    <p class="alert alert-info p-3 fw-bold" *ngIf="accounts.length===0">
+        No Accounts to display
+    </p>
+
+    <table class="table table-border table-striped" *ngIf="accounts.length>0">
+        <thead>
+            <tr>
+                <th>Account#</th>
+                <th>Full Name</th>
+                <th>Mobile</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of accounts">
+                <td>{{a.id}}</td>
+                <td>{{a.firstName}} {{a.lastName}}</td>
+                <td>{{a.mobile}}</td>
+                <td>
+                    <a [routerLink]="['/editAccount',a.id]" class="btn btn-sm btn-info me-2">EDIT</a>
+                    <button type="button" class="btn btn-sm btn-danger" (click)="del(a.id)" >DELETE</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

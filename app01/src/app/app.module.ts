@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FriendsComponent } from './friends/friends.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
+import { ArthComponent } from './arth/arth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     FriendsComponent,
-    PipesDemoComponent
+    PipesDemoComponent,
+    ArthComponent
   ],
   imports: [
     BrowserModule,

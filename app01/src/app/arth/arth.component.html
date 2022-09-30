@@ -1,0 +1,18 @@
+<div class="box arth">
+    <form>
+        <label>Operand1:
+            <input type="number" name="tb1" [(ngModel)]="n1" />
+        </label>
+        <label>Operand2:
+            <input type="number" name="tb1" [(ngModel)]="n2" />
+        </label>
+    </form>
+
+    <div>
+        <p>Sum of {{n1}} and {{n2} is <strong>{{n1+n2}}</strong></p>
+        <p>Dif of {{n1}} and {{n2} is <strong>{{n1-n2}}</strong></p>
+        <p>Prd of {{n1}} and {{n2} is <strong>{{n1*n2}}</strong></p>
+        <p>Qut of {{n1}} and {{n2} is <strong>{{n1/n2}}</strong></p>
+        <p>Rem of {{n1}} and {{n2} is <strong>{{n1%n2}}</strong></p>
+    </div>
+</div>

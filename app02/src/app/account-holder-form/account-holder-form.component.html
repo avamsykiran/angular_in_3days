@@ -1,1 +1,25 @@
-<p>account-holder-form works!</p>
+<div class="col-sm-5 p-4 mx-auto">
+    <h5>{{isEditing?"Edit":"Add"}} Account</h5>
+    
+    <form (ngSubmit)="save()" #f="ngForm">
+        <div>
+            <label>Account Holder Id:</label>
+            <input type="number" name="aid" [(ngModel)]="account.id" [readonly]="isEditing" class="form-control" required/>
+        </div>
+        <div>
+            <label>First Name</label>
+            <input type="text" name="fnm" [(ngModel)]="account.firstName" class="form-control" required/>
+        </div>
+        <div>
+            <label>Last Name</label>
+            <input type="text" name="lnm" [(ngModel)]="account.lastName" class="form-control" required/>
+        </div>
+        <div>
+            <label>Mobile</label>
+            <input type="text" name="mob" [(ngModel)]="account.mobile" class="form-control" required pattern="[1-9][0-9]{9}"/>
+        </div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" [disabled]="f.invalid">SAVE</button>
+        </div>
+    </form>
+</div>
