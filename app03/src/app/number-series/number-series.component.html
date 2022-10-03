@@ -1,0 +1,23 @@
+<div>
+    <form class="border border-primary p-3 me-3" (ngSubmit)="start()">
+        <div>
+            <label>Lower Bound</label>
+            <input type="number" [(ngModel)]="lb" name="lb" class="form-control"/>
+        </div>
+        <div>
+            <label>Upper Bound</label>
+            <input type="number" [(ngModel)]="ub" name="ub" class="form-control"/>
+        </div>
+        <div>
+            <button class="btn btn-primary" [disabled]="isJobInProgress">START</button>
+        </div>
+    </form>
+
+    <p class="alert alert-danger p-3 fw-bold" *ngIf="errMsg">
+        {{errMsg}}
+    </p>
+
+    <div class="alert alert-info p-3 fw-bold" *ngIf="results && results.length>0">
+        <span *ngFor="let x of results">{{x}} </span>
+    </div>
+</div>

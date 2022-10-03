@@ -1,0 +1,22 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "firstName": "Vamsy Kiran",
+      "lastName": "Aripaka",
+      "mobile": "8888888888"
+    },
+    {
+      "id": 2,
+      "firstName": "Sagar",
+      "lastName": "Aripaka",
+      "mobile": "9052224744"
+    },
+    {
+      "firstName": "Srinu",
+      "lastName": "Dachepalli",
+      "mobile": "9052224788",
+      "id": 3
+    }
+  ]
+}

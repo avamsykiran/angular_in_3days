@@ -262,7 +262,34 @@ Observables - RxJS
         ob.subscribe({              //this is here the job execution starts.
             next: data => {/* we can eceive the data emiteed */ },
             error: err => {/* we receive he error */},
-            complete : () => {/*we will do whateever we have to on the backgroudn job compelteion*/ }
+            complete : () => {/*we will do whateever we have to on the background job compelteion*/ }
         });
 
-        //any other code at this point will not wait the job compeltion....
+        //any other code at this point will not wait for the job completion....
+
+json-server
+--------------------------------------------------
+
+    used to create a fake rest api based on a .json file.
+
+    create an empty node project
+        md folder-name
+        cd folder-name
+        npm init -y
+
+    install json-server
+        npm install json-server --save
+
+    to execute 'in package.sjon' we create a start script as 'json-server --watch data.json --port 9999'.
+
+    data.json shall contain the hypothetical data and each record must have an 'id'.
+
+HttpClient  from  'HttpClientModule'  from '@angular/common/http'
+-------------------------------------------------------------------------
+
+    HttpClient
+        get(url) : Observable
+        post(url,reqBody) : Observable
+        put(url,reqBody) : Observable
+        delete(url) : Observable
+
