@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AccountHoldersComponent } from './account-holders/account-holders.component';
 import { AccountHolderFormComponent } from './account-holder-form/account-holder-form.component';
+import { NumberSeriesComponent } from './number-series/number-series.component';
+import { NumberSeriesGroupComponent } from './number-series-group/number-series-group.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { AccountHolderFormComponent } from './account-holder-form/account-holder
     AppComponent,
     HeaderComponent,
     AccountHoldersComponent,
-    AccountHolderFormComponent
+    AccountHolderFormComponent,
+    NumberSeriesComponent,
+    NumberSeriesGroupComponent
   ],
   imports: [
     BrowserModule,

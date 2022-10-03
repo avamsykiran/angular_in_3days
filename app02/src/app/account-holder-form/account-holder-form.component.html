@@ -4,19 +4,32 @@
     <form (ngSubmit)="save()" #f="ngForm">
         <div>
             <label>Account Holder Id:</label>
-            <input type="number" name="aid" [(ngModel)]="account.id" [readonly]="isEditing" class="form-control" required/>
+            <input type="number" name="aid" [(ngModel)]="account.id" #aid="ngModel" [readonly]="isEditing" class="form-control" required/>
+            <div class="alert alert-danger p-2" *ngIf="aid.invalid && (aid.touched || aid.dirty)">
+                <p>Account Id can not be left blank</p>
+            </div>
         </div>
         <div>
             <label>First Name</label>
-            <input type="text" name="fnm" [(ngModel)]="account.firstName" class="form-control" required/>
+            <input type="text" name="fnm" [(ngModel)]="account.firstName" #fnm="ngModel" class="form-control" required/>
+            <div class="alert alert-danger p-2" *ngIf="fnm.invalid && (fnm.touched || fnm.dirty)">
+                <p>First name can not be left blank</p>
+            </div>
         </div>
         <div>
             <label>Last Name</label>
-            <input type="text" name="lnm" [(ngModel)]="account.lastName" class="form-control" required/>
+            <input type="text" name="lnm" [(ngModel)]="account.lastName" #lnm="ngModel" class="form-control" required/>
+            <div class="alert alert-danger p-2" *ngIf="lnm.invalid && (lnm.touched || lnm.dirty)">
+                <p>Last name can not be left blank</p>
+            </div>
         </div>
         <div>
             <label>Mobile</label>
-            <input type="text" name="mob" [(ngModel)]="account.mobile" class="form-control" required pattern="[1-9][0-9]{9}"/>
+            <input type="text" name="mob" [(ngModel)]="account.mobile" #mob="ngModel" class="form-control" required pattern="[1-9][0-9]{9}"/>
+            <div class="alert alert-danger p-2" *ngIf="mob.invalid && (mob.touched || mob.dirty)">
+                <p *ngIf="mob.errors!['required']">Mobile can not be left blank</p>
+                <p *ngIf="mob.errors!['pattern']">Mobile is expected to be a 10 digit number</p>
+            </div>
         </div>
         <div class="d-grid gap-2">
             <button class="btn btn-primary" [disabled]="f.invalid">SAVE</button>

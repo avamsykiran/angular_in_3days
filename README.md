@@ -233,9 +233,36 @@ Routing
 
         Route               class       path,pathMatch:'startsWith|full',redirect,component,children
         Routes              Route[]
-        Router              Service     to navigate progamatically using a methd 'navigateByUrl()'
+        Router              Service     to navigate progamatically using a method 'navigateByUrl()'
         ActivatedRoute      Service     to read path variables and query params from a url.
         router-outlet       Component   is sued to reserve place for the output component of routing
         routerLink          Attribute Directive     is used on 'a' eleemnt isntead of 'href'.
-        routerLinkActive    Attribute Directive     is used on 'a' eleemnt to apply a css class on active links'
+        routerLinkActive    Attribute Directive     is used on 'a' eleemnt to apply a css class 
+                                                    on active links'
 
+Observables - RxJS
+-------------------------------------------------------------------------
+
+    RxJs        Reactive Javascript
+
+        Observable support managing background jobs from a foreground job in a UI/UX app.
+
+        const bgJob = observer => {
+             /* asynchronous code..... */
+             /* that executes any time - cosnuming job */
+
+            observer.next(data)     //used to emit values while the job in progress.
+            observer.error(error)   //used to raise an error indicating the abortion of the job
+            observer.complete()     //used to indicate the job completion.
+        }
+
+        let ob = new Observable(bgJob); //only observable is created, 
+                                        //but the job will not start executing...
+
+        ob.subscribe({              //this is here the job execution starts.
+            next: data => {/* we can eceive the data emiteed */ },
+            error: err => {/* we receive he error */},
+            complete : () => {/*we will do whateever we have to on the backgroudn job compelteion*/ }
+        });
+
+        //any other code at this point will not wait the job compeltion....
