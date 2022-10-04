@@ -13,9 +13,13 @@ export class TxnRowComponent implements OnInit {
 
   @Output()
   deleteBtnClicked:EventEmitter<number>;
+  
+  @Output()
+  editBtnClicked:EventEmitter<number>;
 
   constructor() {
     this.deleteBtnClicked = new EventEmitter<number>();
+    this.editBtnClicked = new EventEmitter<number>();
   }
 
   ngOnInit(): void {
@@ -23,5 +27,9 @@ export class TxnRowComponent implements OnInit {
 
   raiseDeleteBtnClicked(){
     this.deleteBtnClicked.emit(this.txn.id);
+  }
+
+  raiseEditBtnClicked(){
+    this.editBtnClicked.emit(this.txn.id);
   }
 }

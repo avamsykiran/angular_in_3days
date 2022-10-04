@@ -42,5 +42,32 @@ export class TxnsComponent implements OnInit {
       });
     }
   }
+
+  markEditable(id:number){
+    let index = this.txns.findIndex(t => t.id===id);
+    this.txns[index].editable=true;
+  }
+
+  unMarkEditable(id:number){
+    let index = this.txns.findIndex(t => t.id===id);
+    this.txns[index].editable=undefined;
+  }
+
+  addTxn(txn:Txn){
+    txn.ahId=this.account.id;
+    this.txnsService.addTxn(txn).subscribe({
+      next: data => this.loadTxns(),
+      error: err => {console.error(err); this.errMsg="Unable to save!"}
+    });
+  }
+
+  updateTxn(txn:Txn){
+    txn.ahId=this.account.id;
+    txn.editable=undefined;
+    this.txnsService.updateTxn(txn).subscribe({
+      next: data => this.loadTxns(),
+      error: err => {console.error(err); this.errMsg="Unable to save!"}
+    });
+  }
 }
 

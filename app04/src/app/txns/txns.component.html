@@ -4,7 +4,7 @@
     <p class="alert alert-info p-2 fw-bold" *ngIf="!account && !errMsg">
         Please wait while loading account details...
     </p>
-    
+
     <p class="alert alert-danger p-2 fw-bold" *ngIf="errMsg">
         {{errMsg}}
     </p>
@@ -30,18 +30,28 @@
                 <div class="col-sm-2">Debit</div>
                 <div class="col-sm-2"></div>
             </div>
-            <div class="row p-1"  *ngIf="txns.length===0">
+            <div class="row p-1" *ngIf="txns.length===0">
                 <div class="col">
                     No transactions recorded for this account.
                 </div>
             </div>
-            <div *ngIf="txns.length>0">
-                <app-txn-row 
-                    *ngFor="let t of txns" 
-                    [txn]="t" 
-                    (deleteBtnClicked)="deleteTxn($event)">
-                </app-txn-row>
-            </div>
+            <ng-container *ngIf="txns.length>0">
+                <ng-container *ngFor="let t of txns">
+                    <app-txn-row 
+                        *ngIf="!t.editable"
+                        [txn]="t" 
+                        (deleteBtnClicked)="deleteTxn($event)"
+                        (editBtnClicked)="markEditable($event)">
+                    </app-txn-row>
+                    <app-txn-form-row
+                        *ngIf="t.editable"
+                        [txn]="t"
+                        (formSubmitted)="updateTxn($event)"
+                        (formResetted)="unMarkEditable(t.id)">
+                    </app-txn-form-row>
+                </ng-container>
+            </ng-container>
+            <app-txn-form-row (formSubmitted)="addTxn($event)"></app-txn-form-row>
         </div>
     </div>
 </div>

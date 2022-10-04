@@ -1,11 +1,11 @@
 <div class="row border-bottom p-1">
     <div class="col-sm-2 text-end">{{txn.id}}</div>
-    <div class="col-sm-2 text-center">{{txn.txnDate}}</div>
+    <div class="col-sm-2 text-center">{{txn.txnDate|date:'dd-MMM-yyyy'}}</div>
     <div class="col">{{txn.ledger}}</div>
     <div class="col-sm-2 text-end">{{txn.type==='CREDIT'?txn.amount:''}}</div>
     <div class="col-sm-2 text-end">{{txn.type==='DEBIT'?txn.amount:''}}</div>
     <div class="col-sm-2">
-        <button type="button" class="btn btn-sm btn-info me-1">EDIT</button>
+        <button type="button" class="btn btn-sm btn-info me-1" (click)="raiseEditBtnClicked()">EDIT</button>
         <button type="button" class="btn btn-sm btn-danger" (click)="raiseDeleteBtnClicked()">DELETE</button>
     </div>
 </div>

@@ -27,6 +27,38 @@
       "amount": 78000,
       "txnDate": "2022-10-01",
       "ahId": 1
+    },
+    {
+      "id": 2,
+      "ledger": "Rent",
+      "amount": 5000,
+      "ahId": 1,
+      "txnDate": "2022-10-04T00:00:00.000Z",
+      "type": "DEBIT"
+    },
+    {
+      "id": 3,
+      "ledger": "Bithday Party",
+      "amount": 4500,
+      "ahId": 1,
+      "txnDate": "2022-10-04T00:00:00.000Z",
+      "type": "DEBIT"
+    },
+    {
+      "id": 4,
+      "ledger": "Bonus On Shres",
+      "amount": 45000,
+      "ahId": 3,
+      "txnDate": "2022-10-04T00:00:00.000Z",
+      "type": "CREDIT"
+    },
+    {
+      "id": 5,
+      "ledger": "ReFuel Car",
+      "amount": 1200,
+      "ahId": 3,
+      "txnDate": "2022-10-04T00:00:00.000Z",
+      "type": "DEBIT"
     }
   ]
 }
