@@ -1,0 +1,47 @@
+<div class="col-sm-11 mx-auto p-2">
+    <h5>Statement</h5>
+
+    <p class="alert alert-info p-2 fw-bold" *ngIf="!account && !errMsg">
+        Please wait while loading account details...
+    </p>
+    
+    <p class="alert alert-danger p-2 fw-bold" *ngIf="errMsg">
+        {{errMsg}}
+    </p>
+
+    <div *ngIf="account">
+        <div class="row border border-primary p-2">
+            <div class="col-sm-1 fw-bold">Name: </div>
+            <div class="col">{{account.firstName}} {{account.lastName}}</div>
+            <div class="col-sm-1 fw-bold">Mobile: </div>
+            <div class="col-sm-2">{{account.mobile}}</div>
+        </div>
+
+        <p class="alert alert-info p-2 fw-bold" *ngIf="!txns && !errMsg">
+            Please wait while loading statement...
+        </p>
+
+        <div *ngIf="txns" class="p-2">
+            <div class="row border-bottom border-secondary fw-bold text-center p-1">
+                <div class="col-sm-2">Txn#</div>
+                <div class="col-sm-2">Txn Date</div>
+                <div class="col">Ledger</div>
+                <div class="col-sm-2">Credit</div>
+                <div class="col-sm-2">Debit</div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row p-1"  *ngIf="txns.length===0">
+                <div class="col">
+                    No transactions recorded for this account.
+                </div>
+            </div>
+            <div *ngIf="txns.length>0">
+                <app-txn-row 
+                    *ngFor="let t of txns" 
+                    [txn]="t" 
+                    (deleteBtnClicked)="deleteTxn($event)">
+                </app-txn-row>
+            </div>
+        </div>
+    </div>
+</div>

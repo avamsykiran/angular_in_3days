@@ -18,5 +18,15 @@
       "mobile": "9052224788",
       "id": 3
     }
+  ],
+  "txns": [
+    {
+      "id": 1,
+      "ledger": "Salary",
+      "type": "CREDIT",
+      "amount": 78000,
+      "txnDate": "2022-10-01",
+      "ahId": 1
+    }
   ]
 }

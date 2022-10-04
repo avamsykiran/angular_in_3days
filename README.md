@@ -280,7 +280,7 @@ json-server
     install json-server
         npm install json-server --save
 
-    to execute 'in package.sjon' we create a start script as 'json-server --watch data.json --port 9999'.
+    to execute 'in package.json' we create a start script as 'json-server --watch data.json --port 9999'.
 
     data.json shall contain the hypothetical data and each record must have an 'id'.
 
@@ -293,3 +293,47 @@ HttpClient  from  'HttpClientModule'  from '@angular/common/http'
         put(url,reqBody) : Observable
         delete(url) : Observable
 
+Component Decomposition (Parent and Child Components)
+-------------------------------------------------------------------------
+
+    Parent has to share data with Child component
+        The child component must have an @Input() field  that serves as an attribute.
+
+    Child has to raise an event to notify the Parent Component
+        The child component will use @Output() EventEmitter field.
+
+Angular Forms
+-------------------------------------------------------------------------
+
+    Template Driven Forms
+        
+        FormsModule
+
+            ngForm
+                valid
+                invalid
+
+            ngModel
+                dirty
+                prestine
+                touched
+                untouched
+                valid
+                invalid
+                errors
+
+
+    Model Driven Forms / Reactive Forms
+
+        ReactiveFormsModule
+
+            FormControl
+                dirty
+                prestine
+                touched
+                untouched
+                valid
+                invalid
+                errors
+            FormBuilder
+            formControlName
